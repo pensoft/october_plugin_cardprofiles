@@ -14,7 +14,8 @@ columns:
         select: name
     country:
         label: country
-        type: text
+        type: partial
+        path: $/pensoft/cardprofiles/partials/_country_column.htm
     position:
         label: position
         type: text

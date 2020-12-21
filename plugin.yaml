@@ -5,12 +5,12 @@ plugin:
     icon: oc-icon-users
     homepage: ''
 navigation:
-    main-menu-item:
+    profile-cards:
         label: 'Profile cards'
         url: pensoft/cardprofiles/category
         icon: icon-users
         sideMenu:
-            side-menu-item:
-                label: 'Items'
+            profile-cards-items:
+                label: Items
                 url: pensoft/cardprofiles/profiles
                 icon: icon-users

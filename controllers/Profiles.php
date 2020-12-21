@@ -13,6 +13,6 @@ class Profiles extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('pensoft.Cardprofiles', 'main-menu-item', 'side-menu-item');
+        BackendMenu::setContext('Pensoft.Cardprofiles', 'profile-cards', 'profile-cards-items');
     }
 }
