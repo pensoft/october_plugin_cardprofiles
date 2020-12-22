@@ -1,10 +1,11 @@
 
 {% if __SELF__.property('show-category-title') %}
-    <div class="col-xs text-center">
+    <div class="col-xs-12 text-center">
         <h3 class="underline">{{__SELF__.getCategory().name}}</h3>
     </div>
 {% endif %}
 
+<div class="cards justify-content-center card-profiles ">
 {% for item in __SELF__.getCategory().profiles.take(__SELF__.property('maxItems')) %}
 	{% partial "@card-profile"
 		fullname=item.names
@@ -17,4 +18,4 @@
 		avatar=item.avatar
 	%}
 {% endfor %}
-
+</div>
