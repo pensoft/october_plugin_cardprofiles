@@ -3,8 +3,14 @@
     <div class="card-body">
 		<img class="card-img-top" src="{% if avatar %}{{avatar|resize(290, 290, {'mode': 'crop'})}}{% else %}{{'pensoft/profile.png'|media}}{% endif %}" alt="{{fullname}}" />
 		<h3 class="card-title">{{fullname}}</h3>
+        {% if department %}
 		<div class="info"><i class="pr normal p-location"></i> {{department}}</div>
+        {% endif %}
+        {%if country.name %}
         <div class="info"><i class="pr normal p-{{country.code}}"></i>{{country.name}}</div>
+        {% endif %}
+        {% if email %}
         <div class="info"><i class="pr normal p-mail"></i><a href="mailto:{{email}}">{{email}}</a></div>
+        {% endif %}
     </div>
 </div>
