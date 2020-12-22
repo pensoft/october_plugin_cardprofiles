@@ -5,17 +5,19 @@
     </div>
 {% endif %}
 
-<div class="cards justify-content-center card-profiles ">
-{% for item in __SELF__.getCategory().profiles.take(__SELF__.property('maxItems')) %}
-	{% partial "@card-profile"
-		fullname=item.names
-		content=item.content
-		country=item.country
-		position=item.position
-		url=item.slug
-		department=item.department
-		email=item.email
-		avatar=item.avatar
-	%}
-{% endfor %}
+<div class="card-container">
+	<div class="cards justify-content-center card-profiles ">
+	{% for item in __SELF__.getCategory().profiles.take(__SELF__.property('maxItems')) %}
+		{% partial "@card-profile"
+			fullname=item.names
+			content=item.content
+			country=item.country
+			position=item.position
+			url=item.slug
+			department=item.department
+			email=item.email
+			avatar=item.avatar
+		%}
+	{% endfor %}
+	</div>
 </div>
