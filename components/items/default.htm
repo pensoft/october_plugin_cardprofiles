@@ -6,8 +6,8 @@
 {% endif %}
 
 <div class="card-container">
-	<div class="cards justify-content-center card-profiles ">
-	{% for item in __SELF__.getCategory().profiles.take(__SELF__.property('maxItems')) %}
+	<div class="cards justify-content-between card-profiles ">
+	{% for item in __SELF__.getCategory().profiles.sortBy('sort_order').take(__SELF__.property('maxItems')) %}
 		{% partial "@card-profile"
 			fullname=item.names
 			content=item.content
@@ -16,7 +16,7 @@
 			url=item.slug
 			department=item.department
 			email=item.email
-			avatar=item.avatar
+			avatar=item.resized_avatar
 		%}
 	{% endfor %}
 	</div>

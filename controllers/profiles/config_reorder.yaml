@@ -1,0 +1,5 @@
+title: Profiles
+modelClass: Pensoft\Cardprofiles\Models\Profiles
+nameFrom: names
+toolbar:
+    buttons: reorder_toolbar

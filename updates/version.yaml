@@ -6,3 +6,6 @@
 1.0.3:
     - 'Created table pensoft_cardprofiles_category'
     - builder_table_create_pensoft_cardprofiles_category.php
+1.0.4:
+    - 'Update table pensoft_cardprofiles_items'
+    - update_table_pensoft_cardprofiles_items.php
