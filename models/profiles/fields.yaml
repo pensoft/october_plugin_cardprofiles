@@ -11,8 +11,8 @@ fields:
             type: slug
         type: text
     content:
-        label: Content
-        size: ''
+        label: 'pensoft.cardprofiles::lang.plugin.description'
+        size: large
         span: left
         type: richeditor
     category:
