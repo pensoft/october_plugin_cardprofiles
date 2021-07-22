@@ -51,3 +51,11 @@ fields:
         label: Email
         span: auto
         type: text
+    phone:
+        label: 'Phone number'
+        span: auto
+        type: text
+    address:
+        label: Address
+        span: auto
+        type: text

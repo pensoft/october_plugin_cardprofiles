@@ -11,3 +11,6 @@
     - update_table_pensoft_cardprofiles_items.php
 1.0.5:
     - 'Update fields'
+1.0.6:
+    - 'Updated table pensoft_cardprofiles_items'
+    - builder_table_update_pensoft_cardprofiles_items.php
