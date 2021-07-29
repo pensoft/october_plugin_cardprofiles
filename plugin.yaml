@@ -14,3 +14,7 @@ navigation:
                 label: Items
                 url: pensoft/cardprofiles/profiles
                 icon: icon-users
+            side-menu-item:
+                label: Categories
+                url: pensoft/cardprofiles/category
+                icon: icon-sitemap
