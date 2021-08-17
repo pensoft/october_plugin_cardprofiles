@@ -14,7 +14,7 @@
         {% endif %}
         
         {% if email %}
-        <div class="email"><i class="pr normal p-mail"></i><a href="mailto:{{email}}">{{email}}</a></div>
+        <div class="email"><i class="pr normal p-mail"></i><a href="mailto:{{email | replace({ ' {at} ': '@' }) }}">{{email}}</a></div>
         {% endif %}
         {% if content %}
         <div class="body">{{content|raw}}</a></div>
