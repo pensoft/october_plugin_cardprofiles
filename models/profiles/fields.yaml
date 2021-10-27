@@ -59,3 +59,9 @@ fields:
         label: Address
         span: auto
         type: text
+    partner:
+        label: Partner
+        nameFrom: instituion
+        descriptionFrom: description
+        span: auto
+        type: relation

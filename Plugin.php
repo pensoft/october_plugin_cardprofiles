@@ -6,6 +6,8 @@ use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
 {
+	public $require = ['Pensoft.Partners'];
+
     public function registerComponents()
     {
         return [

@@ -7,17 +7,32 @@
 
 <div class="card-container">
 	<div class="cards justify-content-between card-profiles ">
-	{% for item in __SELF__.getCategory().profiles.sortBy('sort_order').take(__SELF__.property('maxItems')) %}
-		{% partial "@card-profile"
-			fullname=item.names
-			content=item.content
-			country=item.country
-			position=item.position
-			url=item.slug
-			department=item.department
-			email=item.email
-			avatar=item.resized_avatar
-		%}
-	{% endfor %}
+	{% if partner_id %}
+		{% for item in __SELF__.getCategory().profiles.where('partner_id', partner_id).sortBy('sort_order').take(__SELF__.property('maxItems')) %}
+			{% partial "@card-profile"
+				fullname=item.names
+				content=item.content
+				country=item.country
+				position=item.position
+				url=item.slug
+				department=item.department
+				email=item.email
+				avatar=item.resized_avatar
+			%}
+		{% endfor %}
+	{% else %}
+		{% for item in __SELF__.getCategory().profiles.sortBy('sort_order').take(__SELF__.property('maxItems')) %}
+			{% partial "@card-profile"
+				fullname=item.names
+				content=item.content
+				country=item.country
+				position=item.position
+				url=item.slug
+				department=item.department
+				email=item.email
+				avatar=item.resized_avatar
+			%}
+		{% endfor %}
+	{% endif %}
 	</div>
 </div>

@@ -18,3 +18,8 @@
     - 'Update backend menu'
 1.0.8:
     - 'str replace email {at}'
+1.0.9:
+    - 'Updated table pensoft_cardprofiles_items'
+    - builder_table_update_pensoft_cardprofiles_items_2.php
+1.0.10:
+    - 'Related profile card to partners'
