@@ -23,3 +23,9 @@ columns:
         label: Content
         type: partial
         path: $/pensoft/cardprofiles/partials/_content_column.htm
+    revisions:
+        type: partial
+        path: ~/plugins/pensoft/media/partials/_revision.htm
+        searchable: false
+        sortable: false
+        valueFrom: id

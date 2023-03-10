@@ -25,3 +25,5 @@
     - 'Related profile card to partners'
 1.0.11:
     - 'Removed country column from backend listview'
+1.0.12:
+    - 'Revision history'
