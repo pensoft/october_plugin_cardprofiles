@@ -23,3 +23,9 @@
     - builder_table_update_pensoft_cardprofiles_items_2.php
 1.0.10:
     - 'Related profile card to partners'
+1.0.11:
+    - 'Removed country column from backend listview'
+1.0.12:
+    - 'Revision history'
+1.0.13:
+    - 'Translate'

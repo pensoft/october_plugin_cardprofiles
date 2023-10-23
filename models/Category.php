@@ -21,6 +21,18 @@ class Category extends Model
         'body',
     ];
 
+    // For Revisionable namespace
+    use \October\Rain\Database\Traits\Revisionable;
+
+    public $timestamps = false;
+
+    // Add  for revisions limit
+    public $revisionableLimit = 200;
+
+    // Add for revisions on particular field
+    protected $revisionable = ["id","name","slug","body"];
+
+
     /**
      * @var string The database table used by the model.
      */
@@ -48,6 +60,7 @@ class Category extends Model
     {
         return BackendAuth::getUser()->id;
     }
+
 
             /**
      * Add translation support to this model, if available.
