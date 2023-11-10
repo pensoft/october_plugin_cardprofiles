@@ -2,6 +2,7 @@
 
 use Model;
 use BackendAuth;
+use Validator;
 
 /**
  * Model
@@ -24,6 +25,19 @@ class Profiles extends Model
      * @var string The database table used by the model.
      */
     public $table = 'pensoft_cardprofiles_items';
+
+    /**
+     * @var array Translatable fields
+     */
+    public $translatable = [
+        'names',
+        'slug',
+        'body',
+        'content',
+        'position',
+        'department',
+        'address',
+    ];
 
     /**
      * @var array Validation rules
@@ -59,7 +73,7 @@ class Profiles extends Model
 
         $resizer = new \ABWebDevelopers\ImageResize\Classes\Resizer($image, false);
 
-       
+
         return $resizer->resize(290, 290, [
             'mode' => 'crop'
         ]);
@@ -94,4 +108,38 @@ class Profiles extends Model
     {
         return BackendAuth::getUser()->id;
     }
+
+    /**
+     * Add translation support to this model, if available.
+     *
+     * @return void
+     */
+    public static function boot()
+    {
+        Validator::extend(
+            'json',
+            function ($attribute, $value, $parameters) {
+                json_decode($value);
+
+                return json_last_error() == JSON_ERROR_NONE;
+            }
+        );
+
+        // Call default functionality (required)
+        parent::boot();
+
+        // Check the translate plugin is installed
+        if (!class_exists('RainLab\Translate\Behaviors\TranslatableModel')) {
+            return;
+        }
+
+        // Extend the constructor of the model
+        self::extend(
+            function ($model) {
+                // Implement the translatable behavior
+                $model->implement[] = 'RainLab.Translate.Behaviors.TranslatableModel';
+            }
+        );
+    }
+
 }
