@@ -27,3 +27,6 @@
     - 'Removed country column from backend listview'
 1.0.12:
     - 'Revision history'
+1.0.13:
+    - 'Allow jpeg for avatar'
+

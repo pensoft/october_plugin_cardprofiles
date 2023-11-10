@@ -28,9 +28,9 @@ fields:
     avatar:
         label: avatar
         mode: image
-        fileTypes: 'svg,png,jpg'
-        imageHeight: 260
         imageWidth: 260
+        imageHeight: 260
+        fileTypes: 'svg,png,jpg,jpeg'
         useCaption: true
         thumbOptions:
             mode: crop
