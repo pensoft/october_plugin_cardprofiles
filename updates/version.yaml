@@ -31,3 +31,5 @@
     - 'Translate'
 1.0.14:
     - 'Allow jpeg for avatar'
+1.0.15:
+    - 'Avatar thumb display changed'
