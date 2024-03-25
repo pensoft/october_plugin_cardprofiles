@@ -16,3 +16,6 @@
     - builder_table_update_pensoft_cardprofiles_items.php
 1.0.7:
     - 'Update backend menu'
+1.0.8:
+    - 'Updated table pensoft_cardprofiles_items'
+    - builder_table_update_pensoft_cardprofiles_items_2.php
