@@ -35,7 +35,8 @@ class Items extends ComponentBase
                 'title' => 'Max items',
                 'description' => 'Max items allowed',
                 'default' => 10,
-            ]
+            ],
+
         ];
     }
 

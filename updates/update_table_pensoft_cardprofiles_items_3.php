@@ -3,13 +3,13 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableUpdatePensoftCardprofilesItems2 extends Migration
+class UpdateTablePensoftCardprofilesItems3 extends Migration
 {
     public function up()
     {
         Schema::table('pensoft_cardprofiles_items', function($table)
         {
-            $table->integer('partner_id')->nullable();
+            $table->string('linkedin_url')->nullable();
         });
     }
 
@@ -17,7 +17,7 @@ class BuilderTableUpdatePensoftCardprofilesItems2 extends Migration
     {
         Schema::table('pensoft_cardprofiles_items', function($table)
         {
-            $table->dropColumn('partner_id');
+            $table->dropColumn('linkedin_url');
         });
     }
 }
