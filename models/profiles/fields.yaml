@@ -59,6 +59,10 @@ fields:
         label: Address
         span: auto
         type: text
+    linkedin_url:
+        label: linkedIn Profile
+        span: auto
+        type: text
     partner:
         label: Partner
         nameFrom: instituion

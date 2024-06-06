@@ -62,7 +62,7 @@ class Category extends Model
     }
 
 
-            /**
+    /**
      * Add translation support to this model, if available.
      *
      * @return void
