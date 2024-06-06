@@ -33,3 +33,5 @@
     - 'Allow jpeg for avatar'
 1.0.15:
     - 'Avatar thumb display changed'
+1.0.16:
+    - 'Cropper integrated'

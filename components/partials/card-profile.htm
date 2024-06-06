@@ -1,6 +1,6 @@
 
 <div class="card profile card-profile">
-    <img class="card-img-top" src="{% if avatar %}{{avatar}}{% else %}{{'pensoft/profile.png'|media}}{% endif %}" alt="{{fullname}}" />
+    <img class="card-img-top" src="{% if avatar_resized %}{{avatar_resized|crop_image}}{% else %}{{'profile.svg'|media}}{% endif %}" alt="{{fullname}}" />
     <h3 class="card-header">{{fullname}}</h3>
     <div class="card-body">
         {% if department %}

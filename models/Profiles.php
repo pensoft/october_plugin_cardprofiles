@@ -3,6 +3,8 @@
 use Model;
 use BackendAuth;
 use Validator;
+use System\Models\File;
+use October\Rain\Resize\Resizer;
 
 /**
  * Model
@@ -11,7 +13,6 @@ class Profiles extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\Sortable;
-    // For Revisionable namespace
     use \October\Rain\Database\Traits\Revisionable;
 
     public $timestamps = false;
@@ -52,7 +53,11 @@ class Profiles extends Model
     ];
 
     public $attachOne = [
-        'avatar' => 'System\Models\File'
+        'avatar' => File::class
+    ];
+    
+    public $morphMany = [
+        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
     ];
 
     public function beforeValidate()
@@ -62,43 +67,43 @@ class Profiles extends Model
         }
     }
 
-    public function getResizedAvatarAttribute()
+    public function afterSave()
     {
-        if (!$this->avatar) {
-            return;
+        if ($this->avatar) {
+            $this->resizeAvatar($this->avatar, 600);
         }
-
-        $imageCropper = new \Zakir\ImageCropper\Plugin($this->app);
-        $image = $imageCropper->crop_image($this->avatar);
-
-        $resizer = new \ABWebDevelopers\ImageResize\Classes\Resizer($image, false);
-
-
-        return $resizer->resize(290, 290, [
-            'mode' => 'crop'
-        ]);
     }
 
-    public function getThumbAvatarAttribute()
+    protected function resizeAvatar(File $avatar, $width)
     {
-        if (!$this->avatar) {
-            return;
-        }
+        $sourcePath = $avatar->getLocalPath();
+        $resizer = Resizer::open($sourcePath);
+        $resizer->resize($width, null, ['mode' => 'auto']);
+        $resizer->save($sourcePath);
 
-        $imageCropper = new \Zakir\ImageCropper\Plugin($this->app);
-        $image = $imageCropper->crop_image($this->avatar);
-
-        $resizer = new \ABWebDevelopers\ImageResize\Classes\Resizer($image, false);
-
-
-        return $resizer->resize(100, 100, [
-            'mode' => 'crop'
-        ]);
+        // Ensure that the avatar object is updated with the resized image
+        $avatar->file_size = filesize($sourcePath);
+        $avatar->save();
     }
-    // Add  below relationship with Revision model
-    public $morphMany = [
-        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
-    ];
+
+    // public function getResizedAvatarAttribute()
+    // {
+    //     if (!$this->avatar) {
+    //         return null;
+    //     }
+        
+    //     return $this->avatar;
+    // }
+
+    // public function getThumbAvatarAttribute()
+    // {
+    //     if (!$this->avatar) {
+    //         return null;
+    //     }
+
+    //     return $this->avatar->getThumb(100, 100, ['mode' => 'auto']);
+    // }
+
 
     // Add below function use for get current user details
     public function diff(){
