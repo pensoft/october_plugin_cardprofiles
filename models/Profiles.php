@@ -49,7 +49,7 @@ class Profiles extends Model
     public $belongsTo = [
         'category' => [Category::class, 'key' => 'category_id', 'otherKey' => 'id'],
 		'country' => ['RainLab\Location\Models\Country', 'scope' => 'isEnabled'],
-		'partner' => ['Pensoft\Partners\Models\Partners', 'key' => 'partner_id'],
+		'partner' => ['Pensoft\Partners\Models\Partners', 'key' => 'partner_id']
     ];
 
     public $attachOne = [
