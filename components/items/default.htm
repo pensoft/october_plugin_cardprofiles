@@ -9,7 +9,7 @@
 	<div class="cards justify-content-between card-profiles ">
 	{% if partner_id %}
 		{% for item in __SELF__.getCategory().profiles.where('partner_id', partner_id).sortBy('sort_order').take(__SELF__.property('maxItems')) %}
-			{% partial "@card-profile"
+		{% partial __SELF__ ~ "::templates/" ~ __SELF__.property('templates')
 				fullname=item.names
 				content=item.content
 				country=item.country
@@ -17,12 +17,12 @@
 				url=item.slug
 				department=item.department
 				email=item.email
-				avatar=item.resized_avatar
+				avatar=item.avatar
 			%}
 		{% endfor %}
 	{% else %}
 		{% for item in __SELF__.getCategory().profiles.sortBy('sort_order').take(__SELF__.property('maxItems')) %}
-			{% partial "@card-profile"
+			{% partial __SELF__ ~ "::templates/" ~ __SELF__.property('templates')
 				fullname=item.names
 				content=item.content
 				country=item.country
@@ -30,7 +30,7 @@
 				url=item.slug
 				department=item.department
 				email=item.email
-				avatar=item.resized_avatar
+				avatar=item.avatar
 			%}
 		{% endfor %}
 	{% endif %}
