@@ -64,8 +64,13 @@ class Profiles extends Model
 
     public function getResizedAvatarAttribute()
     {
+
         if (!$this->avatar) {
             return;
+        }
+        if ($this->avatar) {
+            $this->resizeAvatar($this->avatar, 600);
+            $this->avatar($this->avatar, 600);
         }
 
         $imageCropper = new \Zakir\ImageCropper\Plugin($this->app);
@@ -104,6 +109,7 @@ class Profiles extends Model
     public function diff(){
         $history = $this->revision_history;
     }
+
     public function getRevisionableUser()
     {
         return BackendAuth::getUser()->id;

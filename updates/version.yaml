@@ -36,3 +36,9 @@
 1.0.16:
     - 'Updated table pensoft_cardprofiles_items'
     - update_table_pensoft_cardprofiles_items_3.php
+1.0.17:
+    - 'Cropper integrated'
+1.0.18:
+    - 'Fixed templates'
+1.0.19:
+    - 'Resize logic update'
