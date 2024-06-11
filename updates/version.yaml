@@ -42,3 +42,5 @@
     - 'Fixed templates'
 1.0.19:
     - 'Resize logic update'
+1.0.20:
+    - 'Cropper fix'

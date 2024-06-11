@@ -76,16 +76,6 @@ class Profiles extends Model
             $this->resizeAvatar($this->avatar, 600);
             $this->avatar($this->avatar, 600);
         }
-
-        $imageCropper = new \Zakir\ImageCropper\Plugin($this->app);
-        $image = $imageCropper->crop_image($this->avatar);
-
-        $resizer = new \ABWebDevelopers\ImageResize\Classes\Resizer($image, false);
-
-
-        return $resizer->resize(290, 290, [
-            'mode' => 'crop'
-        ]);
     }
 
     protected function resizeAvatar(File $avatar, $width)
