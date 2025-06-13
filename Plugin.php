@@ -19,7 +19,7 @@ class Plugin extends PluginBase
             });
         });
     }
-    
+
 	public $require = ['Pensoft.Partners'];
 
     public function registerComponents()
@@ -29,7 +29,40 @@ class Plugin extends PluginBase
         ];
     }
 
-    public function registerSettings()
+    public function registerPermissions()
     {
+        return [
+            'pensoft.cardprofiles.access' => [
+                'tab' => 'Profile cards',
+                'label' => 'Manage profile cards'
+            ],
+        ];
+    }
+
+    public function registerNavigation()
+    {
+        return [
+            'profile-cards' => [
+                'label'       => 'Profile cards',
+                'url'         => \Backend::url('pensoft/cardprofiles/category'),
+                'icon'        => 'icon-users',
+                'permissions' => ['pensoft.cardprofiles.*'],
+                'sideMenu' => [
+                    'profile-cards-items' => [
+                        'label'       => 'Items',
+                        'url'         => \Backend::url('pensoft/cardprofiles/profiles'),
+                        'icon'        => 'icon-users',
+                        'permissions' => ['pensoft.accordions.*'],
+                    ],
+                    'side-menu-item' => [
+                        'label'       => 'Categories',
+                        'url'         => \Backend::url('pensoft/cardprofiles/category'),
+                        'icon'        => 'icon-sitemap',
+                        'permissions' => ['pensoft.accordions.*'],
+                    ],
+
+                ]
+            ],
+        ];
     }
 }

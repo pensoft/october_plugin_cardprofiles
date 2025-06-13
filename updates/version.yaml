@@ -44,3 +44,5 @@
     - 'Resize logic update'
 1.0.20:
     - 'Cropper fix'
+1.0.21:
+    - 'Permissions'
