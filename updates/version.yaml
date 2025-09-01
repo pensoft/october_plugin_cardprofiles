@@ -46,3 +46,5 @@
     - 'Cropper fix'
 1.0.21:
     - 'Permissions'
+1.0.22:
+    - 'Added gitignore'
