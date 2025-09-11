@@ -69,3 +69,8 @@ fields:
         descriptionFrom: description
         span: auto
         type: relation
+    quote:
+        label: Quote
+        size: large
+        span: full
+        type: richeditor
