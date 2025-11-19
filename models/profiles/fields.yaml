@@ -69,6 +69,7 @@ fields:
         descriptionFrom: description
         span: auto
         type: relation
+        emptyOption: '-- No partner --'
     quote:
         label: Quote
         size: large

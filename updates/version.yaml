@@ -51,3 +51,5 @@
 1.0.23:
     - 'Added quote field to profiles'
     - update_table_pensoft_cardprofiles_items_4.php
+1.0.24:
+    - 'Added empty option to partner field'
