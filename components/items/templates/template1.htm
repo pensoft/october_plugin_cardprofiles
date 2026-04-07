@@ -1,0 +1,22 @@
+
+<div class="card profile card-profile">
+    <img class="card-img-top" src="{% if avatar %}{{ avatar.path }}{% else %}{{'profile.svg'|media}}{% endif %}" alt="{{fullname}}" />
+    <h3 class="card-header">{{fullname}}</h3>
+    <div class="card-body">
+        {% if department %}
+        <div class="departament"><i class="pr normal p-location"></i> {{department}}</div>
+        {% endif %}
+        {%if country.name %}
+        <div class="country text-bold"><i class="pr normal {{'p-country-'~country.code|lower}}"></i>{{country.name}}</div>
+        {% endif %}
+        {% if position %}
+        <div class="position"><i class="pr normal p-position"></i>{{position}}</div>
+        {% endif %}
+        {% if email %}
+        <div class="email"><i class="pr normal p-mail"></i><a href="mailto:{{email}}">{{email}}</a></div>
+        {% endif %}
+        {% if content %}
+        <div class="body">{{content|raw}}</a></div>
+        {% endif %}
+    </div>
+</div>
