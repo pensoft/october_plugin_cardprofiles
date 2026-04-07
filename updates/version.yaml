@@ -1,0 +1,58 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table pensoft_cardprofiles_items'
+    - builder_table_create_pensoft_cardprofiles_items.php
+1.0.3:
+    - 'Created table pensoft_cardprofiles_category'
+    - builder_table_create_pensoft_cardprofiles_category.php
+1.0.4:
+    - 'Update table pensoft_cardprofiles_items'
+    - update_table_pensoft_cardprofiles_items.php
+1.0.5:
+    - 'Update fields'
+1.0.6:
+    - 'Updated table pensoft_cardprofiles_items'
+    - builder_table_update_pensoft_cardprofiles_items.php
+1.0.7:
+    - 'Update backend menu'
+1.0.8:
+    - 'str replace email {at}'
+1.0.9:
+    - 'Updated table pensoft_cardprofiles_items'
+    - builder_table_update_pensoft_cardprofiles_items_2.php
+1.0.10:
+    - 'Related profile card to partners'
+1.0.11:
+    - 'Removed country column from backend listview'
+1.0.12:
+    - 'Revision history'
+1.0.13:
+    - 'Translate'
+1.0.14:
+    - 'Allow jpeg for avatar'
+1.0.15:
+    - 'Avatar thumb display changed'
+1.0.16:
+    - 'Updated table pensoft_cardprofiles_items'
+    - update_table_pensoft_cardprofiles_items_3.php
+1.0.17:
+    - 'Cropper integrated'
+1.0.18:
+    - 'Fixed templates'
+1.0.19:
+    - 'Resize logic update'
+1.0.20:
+    - 'Cropper fix'
+1.0.21:
+    - 'Permissions'
+1.0.22:
+    - 'Added gitignore'
+1.0.23:
+    - 'Added quote field to profiles'
+    - update_table_pensoft_cardprofiles_items_4.php
+1.0.24:
+    - 'Added empty option to partner field'
+
+4.0.1:
+    - 'Migrated to OctoberCMS 4 and PHP 8.2'

@@ -1,0 +1,17 @@
+fields:
+    name:
+        label: name
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: name
+            type: slug
+        type: text
+    body:
+        label: 'pensoft.cardprofiles::lang.plugin.description'
+        size: large
+        span: auto
+        type: richeditor

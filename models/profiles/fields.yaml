@@ -1,0 +1,77 @@
+fields:
+    names:
+        label: Names
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: names
+            type: slug
+        type: text
+    content:
+        label: 'pensoft.cardprofiles::lang.plugin.description'
+        size: large
+        span: left
+        type: richeditor
+    category:
+        label: Category
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    position:
+        label: Position
+        span: right
+        type: text
+    avatar:
+        label: avatar
+        mode: image
+        imageWidth: 260
+        imageHeight: 260
+        fileTypes: 'svg,png,jpg,jpeg'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: right
+        type: fileupload
+    country:
+        label: Relation
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    department:
+        label: Department
+        span: auto
+        type: text
+    email:
+        label: Email
+        span: auto
+        type: text
+    phone:
+        label: 'Phone number'
+        span: auto
+        type: text
+    address:
+        label: Address
+        span: auto
+        type: text
+    linkedin_url:
+        label: linkedIn Profile
+        span: auto
+        type: text
+    partner:
+        label: Partner
+        nameFrom: instituion
+        descriptionFrom: description
+        span: auto
+        type: relation
+        emptyOption: '-- No partner --'
+    quote:
+        label: Quote
+        size: large
+        span: full
+        type: richeditor
