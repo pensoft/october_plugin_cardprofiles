@@ -53,3 +53,5 @@
     - update_table_pensoft_cardprofiles_items_4.php
 1.0.24:
     - 'Added empty option to partner field'
+1.0.25:
+    - 'Profile avatar fix'

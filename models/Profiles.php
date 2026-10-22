@@ -80,6 +80,11 @@ class Profiles extends Model
 
     protected function resizeAvatar(File $avatar, $width)
     {
+        // Resizer only supports raster images; SVG avatars are kept as-is
+        if (!in_array(strtolower($avatar->getExtension()), ['jpg', 'jpeg', 'png', 'gif', 'webp'])) {
+            return;
+        }
+
         $sourcePath = $avatar->getLocalPath();
         $resizer = Resizer::open($sourcePath);
         $resizer->resize($width, null, ['mode' => 'auto']);
